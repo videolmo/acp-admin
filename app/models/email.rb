@@ -27,7 +27,7 @@ module Email
     {
       from: from,
       to: distribution.emails,
-      template: template_alias(:delivery_list, distribution.email_language),
+      template: template_alias(:delivery_list, distribution.language),
       template_data: {
         delivery_date: I18n.l(delivery.date),
         distribution_name: distribution.name,
@@ -111,7 +111,7 @@ module Email
       halfday_period: halfday.period,
       halfday_activity: halfday.activity,
       halfday_description: halfday.description,
-      halfday_participants_count: halfday_participation.participants_count,
+      halfday_participants_count: halfday_participation.participants_count
     }
     if halfday.place_url
       data[:halfday_place] = {
@@ -226,8 +226,7 @@ module Email
     end
   end
 
-  def template_alias(template, locale = nil)
-    locale ||= Current.acp.language
+  def template_alias(template, locale)
     [template, locale].join('-').dasherize
   end
 

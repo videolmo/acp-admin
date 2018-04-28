@@ -1,0 +1,16 @@
+_:
+  invoice:
+    object_type:
+      support:
+        _de: Cotisation
+        _fr: Cotisation
+    scope:
+      amount:
+        _de: Facturé
+        _fr: Facturé
+      balance:
+        _de: Payé
+        _fr: Payé
+      missing_amount:
+        _de: Restant à facturer
+        _fr: Restant à facturer

@@ -42,6 +42,7 @@ class Newsletter::MailChimp
     fields = {
       MEMB_ID:   { name: 'ID', type: 'number', required: true },
       MEMB_NAME: { name: 'Nom', type: 'text', required: true },
+      MEMB_LANG: { name: 'Langue', type: 'text', required: true },
       MEMB_NEWS: { name: 'Newsletter envoyé?', type: 'dropdown', required: true, options: { choices: ['yes', 'no'] } },
       MEMB_STAT: { name: 'Status', type: 'dropdown', required: true, options: { choices: Member::STATES } },
       MEMB_PAGE: { name: 'Page de membre URL', type: 'text', required: true },
@@ -97,7 +98,8 @@ class Newsletter::MailChimp
   def member_merge_fields(member)
     fields = {
       MEMB_ID: member.id,
-      MEMB_NAME: member.name.to_s,
+      MEMB_NAME: member.name,
+      MEMB_LANG: member.language,
       MEMB_NEWS: member.newsletter? ? 'yes' : 'no',
       MEMB_STAT: member.state,
       MEMB_PAGE: member.page_url,

@@ -7,6 +7,10 @@ module HalfdaysHelper
     I18n.t("halfday.#{Current.acp.halfday_i18n_scope}.other")
   end
 
+  def t_halfday(key, *options)
+    t(halfday_scoped_attribute(key), *options)
+  end
+
   def halfday_scoped_attribute(attr)
     "#{attr}/#{Current.acp.halfday_i18n_scope}".to_sym
   end
@@ -45,12 +49,8 @@ module HalfdaysHelper
     if halfday_participation.participants_count > 1
       summary << " (#{halfday_participation.participants_count})"
     end
-    if halfday_participation.pending?
-      summary << ' [en attente de validation]'
-    elsif halfday_participation.rejected?
-      summary << ' [refusée]'
-    elsif halfday_participation.validated?
-      summary << ' [validée]'
+    if halfday_participation.pending? || halfday_participation.rejected? || halfday_participation.validated?
+      summary << " [#{halfday_participation.state_i18n_name}]"
     end
     summary
   end

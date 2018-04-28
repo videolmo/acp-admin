@@ -1,0 +1,16 @@
+_:
+  flash:
+    alert:
+      coming_halfday_participations_cannot_be_rejected:
+        _de: Les participations à venir ne peuvent pas encore être refusées
+        _fr: Les participations à venir ne peuvent pas encore être refusées
+      coming_halfday_participations_cannot_be_validated:
+        _de: Les participations à venir ne peuvent pas encore être validées
+        _fr: Les participations à venir ne peuvent pas encore être validées
+    notice:
+      email_sent:
+        _de: Email envoyé
+        _fr: Email envoyé
+      invoice_canceled:
+        _de: Facture annulée
+        _fr: Facture annulée
