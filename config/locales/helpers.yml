@@ -17,6 +17,12 @@ _:
     none:
       _de: Kein
       _fr: Aucun
+    no_basket_size:
+      _de: Aucun, devenir membre de soutien
+      _fr: Aucun, devenir membre de soutien
+    no_basket_size_details:
+      _de: cotisation annuelle uniquement
+      _fr: cotisation annuelle uniquement
     page_entries_info:
       more_pages:
         display_entries:

@@ -67,7 +67,7 @@
 .ui-datepicker-next:hover,
 .ui-datepicker-prev:hover:after,
 .ui-datepicker-next:hover:after {
-  border-color: $dark-green;
+  border-color: $medium-gray;
 }
 
 .ui-state-disabled,
@@ -121,7 +121,7 @@
   margin: 0 auto;
   &:hover {
     color: #000;
-    border: 3px solid #555;
+    border: 3px solid $medium-gray;
   }
 }
 
@@ -136,7 +136,7 @@ td.available .ui-state-default {
 }
 
 .ui-datepicker-calendar a.ui-state-active {
-  background: $dark-green;
+  background: $green;
   margin: 0 auto;
   border: 3px solid black;
 }

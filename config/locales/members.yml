@@ -74,6 +74,9 @@ _:
         title:
           _de: Anmeldeformular
           _fr: Formulaire d'inscription
+        support_text:
+          _de: Anmeldeformular
+          _fr: Chaque membre fait également partie de l'association et verse une cotisation anuelle de <b>%{price}</b> en plus de l'abonnement à son panier.
       show:
         cancel_link:
           _de: abbrechen

@@ -94,12 +94,12 @@ button[type='submit'] {
   }
 }
 
-[type='checkbox'],
-[type='radio'] {
-  display: inline;
-  width: 1em;
-  margin: $small-spacing / 2 $small-spacing / 2 $small-spacing / 2 0;
-}
+// [type='checkbox'],
+// [type='radio'] {
+//   display: inline;
+//   width: 1em;
+//   margin: $small-spacing / 2 $small-spacing / 2 $small-spacing / 2 0;
+// }
 
 ul,
 ol {
@@ -158,3 +158,4 @@ section.welcome {
 @import 'members/tooltip';
 @import 'members/labels';
 @import 'members/formtastic';
+@import 'members/pretty_inputs';

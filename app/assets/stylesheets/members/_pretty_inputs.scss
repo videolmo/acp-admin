@@ -1,0 +1,120 @@
+.pretty_check_boxes,
+.pretty_boolean,
+.pretty_radio {
+  margin: 0 0 $small-spacing 0;
+  padding: 0;
+  width: 100%;
+
+  label {
+    position: relative;
+    display: block;
+    margin: $small-spacing / 2 0;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+
+    line-height: $base-line-height;
+    font-size: $base-font-size * 0.9;
+    font-weight: normal;
+
+    /* On mouse-over, add a grey background color */
+    &:hover input ~ span.checkmark {
+      background-color: $medium-gray;
+    }
+
+    /* Hide the browser's default checkbox */
+    input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+
+      /* When the radio button is checked, add a blue background */
+      &:checked ~ span.checkmark {
+        background-color: $green;
+
+        /* Show the indicator (dot/circle) when checked */
+        &:after {
+          display: block;
+        }
+      }
+    }
+
+    span.checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: $light-gray;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+    }
+
+    span.label {
+      display: inline-block;
+      margin-left: calc(20px + 7px);
+      font-weight: 400;
+
+      em {
+        margin-left: $small-spacing / 2;
+        color: $medium-gray;
+        font-weight: 300;
+        font-style: italic;
+
+        &.price {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    a {
+      i {
+        display: inline;
+        // vertical-align: middle;
+        // margin-left: $small-spacing / 4;
+      }
+    }
+  }
+}
+
+.pretty_radio {
+  /* Create a custom checkbox */
+  span.checkmark {
+    border-radius: 50%;
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    &:after {
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+}
+
+.pretty_check_boxes,
+.pretty_boolean {
+  /* Create a custom checkbox */
+  span.checkmark {
+    border-radius: $base-border-radius;
+
+    &:after {
+      left: 7px;
+      top: 3px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+}

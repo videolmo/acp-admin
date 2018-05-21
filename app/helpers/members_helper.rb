@@ -5,7 +5,7 @@ module MembersHelper
 
   def billing_year_divisions_collection
     Current.acp.billing_year_divisions.map { |i|
-      ["<span>#{I18n.t("billing.year_division.x#{i}")}</span>".html_safe, i]
+      [collection_text(I18n.t("billing.year_division.x#{i}")), i]
     }
   end
 
@@ -18,7 +18,7 @@ module MembersHelper
         ].join(', ')),
         bs.id
       ]
-    }
+    } << [collection_text(t('helpers.no_basket_size'), 0, t('helpers.no_basket_size_details')), 0]
   end
 
   def basket_complements_collection
@@ -36,23 +36,24 @@ module MembersHelper
   def distributions_collection
     Distribution.visible.reorder('price, name').map { |d|
       location = [d.address, "#{d.zip} #{d.city}".presence].compact.join(', ') if d.address?
-      txt = collection_text(d.name, d.annual_price, location)
       if location && location != d.address
-        txt += map_icon(location).html_safe
+        location += map_icon(location).html_safe
       end
+      txt = collection_text(d.name, d.annual_price, location)
 
       [txt, d.id]
     }
   end
 
-  private
-
-  def collection_text(text, price, details, precision: 0)
+  def collection_text(text, price = 0, details = '', precision: 0)
     txts = [text]
     txts << "<em class='price'>#{number_to_currency(price, precision: precision)}</em>" if price.positive?
     txts << "<em>(#{details})</em>" if details.present?
-    "<span>#{txts.join}</span>".html_safe
+    txts.join.html_safe
   end
+
+  private
+
 
   def map_icon(location)
     <<-TXT
