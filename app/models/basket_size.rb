@@ -1,4 +1,8 @@
 class BasketSize < ActiveRecord::Base
+  include TranslatedAttributes
+
+  translated_attributes :name
+
   has_many :memberships
   has_many :members, through: :memberships
 

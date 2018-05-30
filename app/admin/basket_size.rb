@@ -12,7 +12,13 @@ ActiveAdmin.register BasketSize do
 
   form do |f|
     f.inputs do
-      f.input :name
+      f.semantic_fields_for :names do |names|
+        Current.acp.languages.each do |locale|
+          names.input locale,
+            label: BasketSize.human_label(:name, locale),
+            input_html: { value: f.object.names[locale] }
+        end
+      end
       f.input :price
       f.input :annual_halfday_works,
         label: BasketSize.human_attribute_name(halfday_scoped_attribute(:annual_halfday_works))
@@ -20,7 +26,9 @@ ActiveAdmin.register BasketSize do
     end
   end
 
-  permit_params(*%i[name price annual_halfday_works])
+  permit_params(
+    :price, :annual_halfday_works,
+    names: I18n.available_locales)
 
   config.filters = false
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_055532) do
+ActiveRecord::Schema.define(version: 2018_05_29_203202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_055532) do
     t.datetime "updated_at"
     t.decimal "price", precision: 8, scale: 3, default: "0.0", null: false
     t.integer "annual_halfday_works", default: 0, null: false
+    t.jsonb "names", default: {}, null: false
     t.index ["name"], name: "index_basket_sizes_on_name", unique: true
   end
 
