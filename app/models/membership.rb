@@ -309,7 +309,7 @@ class Membership < ActiveRecord::Base
     member.reload
     member.update_trial_baskets!
     member.update_absent_baskets!
-    member.update_state!
+    member.update_active_state!
     update_baskets_counts!
   end
 

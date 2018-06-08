@@ -126,33 +126,49 @@ describe Member do
     specify { expect(member.absent?(Date.tomorrow)).to eq true }
   end
 
-  describe '#remove_from_waiting_list!' do
-    it 'changes state from waiting to inactive' do
-      member = create(:member, :waiting)
+  # describe '#remove_from_waiting_list!' do
+  #   it 'changes state from waiting to inactive' do
+  #     member = create(:member, :waiting)
 
-      expect { member.remove_from_waiting_list! }
-        .to change { member.state }.from('waiting').to('inactive')
-        .and change { member.waiting_started_at }.to(nil)
-    end
-  end
+  #     expect { member.remove_from_waiting_list! }
+  #       .to change { member.state }.from('waiting').to('inactive')
+  #       .and change { member.waiting_started_at }.to(nil)
+  #   end
 
-  describe '#put_back_to_waiting_list!' do
-    it 'changes state from waiting to inactive' do
-      member = create(:member, :inactive)
+  #   it 'cleans support_price' do
+  #     member = create(:member, :support)
 
-      expect { member.put_back_to_waiting_list! }
-        .to change { member.state }.from('inactive').to('waiting')
-        .and change { member.waiting_started_at }.from(nil)
-    end
+  #     expect { member.put_back_to_waiting_list! }
+  #       .to change { member.state }.from('inactive').to('waiting')
+  #       .and change { member.support_member }.to(false)
+  #   end
+  # end
 
-    it 'cleans support_member' do
-      member = create(:member, :support)
+  # describe '#put_back_to_waiting_list!' do
+  #   it 'changes state from waiting to inactive' do
+  #     member = create(:member, :inactive)
 
-      expect { member.put_back_to_waiting_list! }
-        .to change { member.state }.from('inactive').to('waiting')
-        .and change { member.support_member }.to(false)
-    end
-  end
+  #     expect { member.put_back_to_waiting_list! }
+  #       .to change { member.state }.from('inactive').to('waiting')
+  #       .and change { member.waiting_started_at }.from(nil)
+  #   end
+
+  #   it 'adds ACP support_price from inactive' do
+  #     member = create(:member, :inactive)
+
+  #     expect { member.put_back_to_waiting_list! }
+  #       .to change { member.state }.from('inactive').to('waiting')
+  #       .and change { member.support_member }.to(false)
+  #   end
+
+  #   it 'keeps ACP support_price from support' do
+  #     member = create(:member, :support)
+
+  #     expect { member.put_back_to_waiting_list! }
+  #       .to change { member.state }.from('inactive').to('waiting')
+  #       .and change { member.support_member }.to(false)
+  #   end
+  # end
 
   describe '#send_welcome_email' do
     it 'sents a welcome email when member becomes active' do

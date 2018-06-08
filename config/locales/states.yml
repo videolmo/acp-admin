@@ -39,9 +39,13 @@ _:
       support:
         _de: Unterstützung
         _fr: soutien
-      trial:
-        _de: Probe
-        _fr: essai
       waiting:
         _de: Warteliste
         _fr: attente
+      memberships:
+        trial:
+          _fr: Abonnement à l'essai
+        ongoing:
+          _fr: Abonnement en cours
+        future:
+          _fr: Abonnement future

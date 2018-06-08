@@ -572,9 +572,6 @@ _:
       support:
         _de: Support
         _fr: soutien
-      trial:
-        _de: Probe
-        _fr: essai
       waiting:
         _de: Warteliste
         _fr: attente

@@ -1,5 +1,8 @@
 _:
   attributes:
+    count:
+      _de: Anzahl
+      _fr: Nombre
     activity:
       _de: Arbeit
       _fr: Activité

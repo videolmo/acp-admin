@@ -21,8 +21,9 @@ class Ability
       can :update, [Membership, Payment], can_update?: true
       can :validate, Member, pending?: true
       can :trigger_recurring_billing, Membership
-      can :remove_from_waiting_list, Member, waiting?: true
-      can :put_back_to_waiting_list, Member, inactive?: true
+      can :deactivate, Member, waiting?: true
+      can :wait, Member, support?: true
+      can :wait, Member, inactive?: true
       can :send_email, Invoice, can_send_email?: true
       can :cancel, Invoice, can_cancel?: true
     end

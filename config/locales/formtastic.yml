@@ -80,9 +80,6 @@ _:
         phones:
           _de: Durch ein Komma getrennt
           _fr: Séparés par une virgule
-        support_member:
-          _de: Zahlt den jährlichen Beitrag, auch wenn keine Abonnemente
-          _fr: Paye la cotisation annuelle même si aucun abonnement
       membership:
         annual_halfday_works:
           _de: Leer lassen für die Standaranzahl
