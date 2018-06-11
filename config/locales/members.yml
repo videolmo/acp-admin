@@ -65,8 +65,10 @@ _:
         submit:
           _de: Senden
           _fr: Envoyer
-        support_text:
+        annual_fee_text:
           _fr: Chaque membre fait également partie de l'association et verse une cotisation anuelle de <b>%{price}</b> en plus de l'abonnement à son panier.
+        acp_shares_text:
+          _fr: Chaque membre fait également partie de l'association et se doit d acquérir plusieurs parts sociales (<b>%{price}/part</b>) en fonction de la taille de son panier. Ces parts sociales sont intégralement remboursées si le membre décide de quitter l'association.
         terms_of_service:
           _de: Ich habe die Statuten und <a href="%{terms_url}">das Reglement</a> gelesen und bin mit diesen einverstanden.
           _fr: J'ai lu attentivement et accepte avec plaisir <a href="%{terms_url}">le règlement</a>.
