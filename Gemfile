@@ -41,7 +41,7 @@ gem 'slim'
 gem 'turbolinks'
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'jbuilder'
 gem 'sass-rails'
 gem 'uglifier'

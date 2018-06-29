@@ -326,10 +326,6 @@ ActiveAdmin.register Member do
       collection
     end
 
-    def find_resource
-      Member.find_by!(token: params[:id])
-    end
-
     def create_resource(object)
       run_create_callbacks object do
         save_resource(object)
