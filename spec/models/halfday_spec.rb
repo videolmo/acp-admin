@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe Halfday do
+  it_behaves_like 'bulk_dates_insert'
+
   it 'validates participants_limit to be at least 1' do
     halfday = Halfday.new(participants_limit: 0)
     expect(halfday).not_to have_valid(:participants_limit)

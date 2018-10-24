@@ -1,6 +1,7 @@
 class Halfday < ActiveRecord::Base
   include TranslatedAttributes
   include HasFiscalYearScopes
+  include BulkDatesInsert
   include HalfdayNaming
 
   attr_reader :preset_id, :preset

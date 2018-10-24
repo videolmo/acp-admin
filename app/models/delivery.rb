@@ -1,5 +1,6 @@
 class Delivery < ActiveRecord::Base
   include HasFiscalYearScopes
+  include BulkDatesInsert
 
   default_scope { order(:date) }
 
@@ -12,8 +13,6 @@ class Delivery < ActiveRecord::Base
   scope :past, -> { where('date < ?', Date.current) }
   scope :coming, -> { where('date >= ?', Date.current) }
   scope :between, ->(range) { where(date: range) }
-
-  validates :date, presence: true
 
   after_save :update_fiscal_year_numbers
   before_destroy :really_destroy_baskets!
@@ -75,7 +74,7 @@ class Delivery < ActiveRecord::Base
   end
 
   def update_fiscal_year_numbers
-    return unless date_previously_changed?
+    return unless date_previously_changed? || date
 
     self.class.during_year(fiscal_year).each_with_index do |d, i|
       d.update_column(:number, i + 1)
