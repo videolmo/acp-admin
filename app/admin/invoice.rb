@@ -2,7 +2,7 @@ ActiveAdmin.register Invoice do
   menu parent: :billing, priority: 1
   actions :all, except: %i[edit update destroy]
 
-  scope :all
+  scope :all_without_canceled
   scope :not_sent
   scope :open, default: true
   scope :with_overdue_notice
@@ -40,15 +40,32 @@ ActiveAdmin.register Invoice do
     as: :select,
     collection: -> { Member.order(:name) }
   filter :object_type,
-    as: :select,
+    as: :check_boxes,
     collection: -> { object_type_collection }
   filter :amount
   filter :date
 
   sidebar I18n.t('active_admin.sidebars.total'), only: :index do
     all = collection.limit(nil)
-    span t('active_admin.sidebars.amount')
-    span number_to_currency(all.sum(:amount)), style: 'float: right; font-weight: bold;'
+    if Array(params.dig(:q, :object_type_in)).include?('Membership') && Current.acp.annual_fee?
+      div class: 'total' do
+        span Membership.model_name.human(count: 2)
+        span number_to_currency(all.sum(:memberships_amount)), style: 'float: right'
+      end
+      div class: 'total' do
+        span t('billing.annual_fees')
+        span number_to_currency(all.sum(:annual_fee)), style: 'float: right;'
+      end
+      div class: 'totals' do
+        span t('active_admin.sidebars.amount')
+        span number_to_currency(all.sum(:amount)), style: 'float: right; font-weight: bold;'
+      end
+    else
+      div do
+        span t('active_admin.sidebars.amount')
+        span number_to_currency(all.sum(:amount)), style: 'float: right; font-weight: bold;'
+      end
+    end
   end
 
   show do |invoice|

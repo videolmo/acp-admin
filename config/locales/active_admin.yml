@@ -287,9 +287,6 @@ _:
         no_basket_complements:
           _de: Kein Zusatz für diese Lieferung
           _fr: Aucun complément pour cette livraison
-        revenue:
-          _de: Umsatz
-          _fr: Chiffre d'Affaire
         signature_sheets:
           _de: Unterschriftszettel
           _fr: Fiches Signature
@@ -614,7 +611,7 @@ _:
           _de: Neue %{model}
           _fr: Nouvelle %{model}
         scopes:
-          all:
+          all_without_canceled:
             _de: alle
             _fr: toutes
           canceled:

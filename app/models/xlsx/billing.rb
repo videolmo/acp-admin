@@ -45,6 +45,8 @@ module XLSX
 
       add_line("#{t('adjustments')}: #{ApplicationController.helpers.halfdays_human_name}", @memberships.sum(&:halfday_works_annual_price))
 
+      add_line("#{t('amount')}: #{ApplicationController.helpers.halfdays_human_name}", @invoices.halfday_participation_type.sum(:amount))
+
       if Current.acp.annual_fee
         add_line(t('annual_fees'), invoices_total(:annual_fee), Current.acp.annual_fee)
       end

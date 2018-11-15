@@ -15,6 +15,12 @@ _:
     balance_without_overbalance:
       _de: Eingezahlt
       _fr: Payé
+    remaining_memberships:
+      _de: Abonnements (à facturer)
+      _fr: Abonnements (à facturer)
+    other:
+      _de: Weiteres
+      _fr: Autre
     membership_amount_description:
       x1:
         _de: Jährliche Rechnungsstellung
@@ -47,6 +53,12 @@ _:
       _de: Zu viel bezahlt (für nächstes Jahr)
       _fr: Payé en trop (pour année suivante)
     scope:
+      paid:
+        _de: Geleistete
+        _fr: Versés
+      missing:
+        _de: Fehlende
+        _fr: Manquants
       acp_share:
         _de: Anteilschein
         _fr: Part Sociale
