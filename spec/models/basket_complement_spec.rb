@@ -16,8 +16,8 @@ describe BasketComplement do
     basket3 = create(:basket, membership: membership_3, delivery: delivery)
     basket3.update!(complement_ids: [1, 2])
 
-    basket_complement1.update!(delivery_ids: [delivery.id])
-    basket_complement2.update!(delivery_ids: [delivery.id])
+    basket_complement1.update!(current_delivery_ids: [delivery.id])
+    basket_complement2.update!(current_delivery_ids: [delivery.id])
 
     basket1.reload
     expect(basket1.complement_ids).to match_array [1, 2]
@@ -47,8 +47,8 @@ describe BasketComplement do
     basket3 = create(:basket, membership: membership_3, delivery: delivery)
     basket3.update!(complement_ids: [1, 2])
 
-    basket_complement1.update!(delivery_ids: [delivery.id])
-    basket_complement2.update!(delivery_ids: [delivery.id])
+    basket_complement1.update!(current_delivery_ids: [delivery.id])
+    basket_complement2.update!(current_delivery_ids: [delivery.id])
 
     basket1.reload
     expect(basket1.complement_ids).to match_array [1, 2]
@@ -78,7 +78,7 @@ describe BasketComplement do
     basket3 = create(:basket, membership: membership_3, delivery: delivery)
     basket3.update!(complement_ids: [1, 2])
 
-    basket_complement2.reload.update!(delivery_ids: [])
+    basket_complement2.reload.update!(current_delivery_ids: [])
 
     basket1.reload
     expect(basket1.complement_ids).to match_array [1]
