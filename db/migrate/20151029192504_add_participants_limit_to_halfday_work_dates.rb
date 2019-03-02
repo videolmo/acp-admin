@@ -1,5 +1,5 @@
-class AddParticipantsLimitToHalfdayWorkDates < ActiveRecord::Migration[4.2]
+class AddParticipantsLimitToActivityWorkDates < ActiveRecord::Migration[4.2]
   def change
-    add_column :halfday_work_dates, :participants_limit, :integer
+    add_column :activity_work_dates, :participants_limit, :integer
   end
 end

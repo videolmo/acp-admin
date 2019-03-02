@@ -24,7 +24,7 @@ class AddMemberships < ActiveRecord::Migration[4.2]
       t.string :name, null: false
       t.integer :year, null: false
       t.decimal :annual_price, scale: 2, precision: 8, null: false
-      t.integer :annual_halfday_works, null: false
+      t.integer :activity_participations_demanded_annualy, null: false
 
       t.timestamps
     end
@@ -36,7 +36,7 @@ class AddMemberships < ActiveRecord::Migration[4.2]
       t.belongs_to :billing_member, index: true, type: 'Member'
 
       t.decimal :annual_price, scale: 2, precision: 8
-      t.integer :annual_halfday_works
+      t.integer :activity_participations_demanded_annualy
 
       t.date :started_on, null: false
       t.date :ended_on, null: false

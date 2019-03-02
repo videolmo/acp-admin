@@ -1,7 +1,7 @@
-ActiveAdmin.register HalfdayParticipation do
-  menu parent: :halfdays_human_name,
+ActiveAdmin.register ActivityParticipation do
+  menu parent: :activity_human_name,
     priority: 1,
-    label: -> { Halfday.human_attribute_name(:participations) }
+    label: -> { Activity.human_attribute_name(:participations) }
 
   scope :all
   scope :pending, default: true
@@ -9,22 +9,22 @@ ActiveAdmin.register HalfdayParticipation do
   scope :validated
   scope :rejected
 
-  includes :member, :halfday
+  includes :member, :activity
   index do
     selectable_column
     column :member, ->(hp) {
       link_with_session hp.member, hp.session
     }, sortable: 'members.name'
-    column :halfday, ->(hp) {
-      link_to hp.halfday.name, halfday_participations_path(q: { halfday_id_eq: hp.halfday_id }, scope: :all)
-    }, sortable: 'halfdays.date'
+    column :activity, ->(hp) {
+      link_to hp.activity.name, activity_participations_path(q: { activity_id_eq: hp.activity_id }, scope: :all)
+    }, sortable: 'activities.date'
     column :participants_count
     column :state, ->(hp) { status_tag hp.state }
     actions
   end
 
   csv do
-    column(:date) { |hp| hp.halfday.date.to_s }
+    column(:date) { |hp| hp.activity.date.to_s }
     column(:member_id, &:member_id)
     column(:member_name) { |hp| hp.member.name }
     column(:member_email) { |hp| hp.session&.email }
@@ -40,16 +40,16 @@ ActiveAdmin.register HalfdayParticipation do
 
   filter :member,
     as: :select,
-    collection: -> { Member.joins(:halfday_participations).order(:name).distinct }
-  filter :halfday,
+    collection: -> { Member.joins(:activity_participations).order(:name).distinct }
+  filter :activity,
     as: :select,
-    collection: -> { Halfday.order(:date, :start_time) }
-  filter :halfday_date, label: -> { Halfday.human_attribute_name(:date) }, as: :date_range
+    collection: -> { Activity.order(:date, :start_time) }
+  filter :activity_date, label: -> { Activity.human_attribute_name(:date) }, as: :date_range
 
   form do |f|
     f.inputs t('.details') do
-      f.input :halfday,
-        collection: Halfday.order(date: :desc),
+      f.input :activity,
+        collection: Activity.order(date: :desc),
         prompt: true
       f.input :member,
         collection: Member.order(:name).distinct,
@@ -59,17 +59,17 @@ ActiveAdmin.register HalfdayParticipation do
     f.actions
   end
 
-  permit_params(*%i[halfday_id member_id participants_count])
+  permit_params(*%i[activity_id member_id participants_count])
 
   show do |hp|
     attributes_table do
-      row(:halfday) { link_to hp.halfday.name, halfday_participations_path(q: { halfday_id_eq: hp.halfday_id }, scope: :all) }
+      row(:activity) { link_to hp.activity.name, activity_participations_path(q: { activity_id_eq: hp.activity_id }, scope: :all) }
       row(:participants_count)
       row(:created_at) { l(hp.created_at) }
       row(:updated_at) { l(hp.updated_at) }
     end
 
-    attributes_table title: HalfdayParticipation.human_attribute_name(:contact) do
+    attributes_table title: ActivityParticipation.human_attribute_name(:contact) do
       row :member
       row(:email) { hp.session&.email }
       row(:phones) { display_phones(hp.member.phones_array) }
@@ -80,7 +80,7 @@ ActiveAdmin.register HalfdayParticipation do
     end
 
     if hp.validated? || hp.rejected?
-      attributes_table HalfdayParticipation.human_attribute_name(:state) do
+      attributes_table ActivityParticipation.human_attribute_name(:state) do
         row(:status) { status_tag hp.state, label: hp.state_i18n_name }
         row :validator
         if hp.validated?
@@ -102,7 +102,7 @@ ActiveAdmin.register HalfdayParticipation do
   end
 
   batch_action :reject do |selection|
-    participations = HalfdayParticipation.includes(:halfday).where(id: selection)
+    participations = ActivityParticipation.includes(:activity).where(id: selection)
     participations.find_each do |participation|
       participation.reject!(current_admin)
     end
@@ -113,7 +113,7 @@ ActiveAdmin.register HalfdayParticipation do
   end
 
   batch_action :validate do |selection|
-    participations = HalfdayParticipation.includes(:halfday).where(id: selection)
+    participations = ActivityParticipation.includes(:activity).where(id: selection)
     participations.find_each do |participation|
       participation.validate!(current_admin)
     end
@@ -127,12 +127,12 @@ ActiveAdmin.register HalfdayParticipation do
     authorized?(:create, Invoice) && resource.rejected? && resource.invoices.none?
   } do
     link_to t('.invoice_action'),
-      new_invoice_path(halfday_participation_id: resource.id, anchor: 'halfday_participation')
+      new_invoice_path(activity_participation_id: resource.id, anchor: 'activity_participation')
   end
 
   controller do
     before_create do |participation|
-      if participation.halfday.date.past?
+      if participation.activity.date.past?
         participation.validated_at = Time.current
         participation.validator = current_admin
       end
@@ -152,6 +152,6 @@ ActiveAdmin.register HalfdayParticipation do
   end
 
   config.per_page = 25
-  config.sort_order = 'halfdays.date_asc'
+  config.sort_order = 'activities.date_asc'
   config.batch_actions = true
 end

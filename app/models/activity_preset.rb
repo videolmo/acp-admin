@@ -1,6 +1,6 @@
-class HalfdayPreset < ActiveRecord::Base
+class ActivityPreset < ActiveRecord::Base
   include TranslatedAttributes
-  include HalfdayNaming
+  include ActivityNaming
 
   default_scope { order_by_place }
 

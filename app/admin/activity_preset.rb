@@ -1,7 +1,7 @@
-ActiveAdmin.register HalfdayPreset do
-  menu parent: :halfdays_human_name,
+ActiveAdmin.register ActivityPreset do
+  menu parent: :activity_human_name,
     priority: 3,
-    label: -> { Halfday.human_attribute_name(:presets) }
+    label: -> { Activity.human_attribute_name(:presets) }
 
   actions :all, except: [:show]
 

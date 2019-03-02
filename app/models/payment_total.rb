@@ -1,5 +1,5 @@
 class PaymentTotal
-  include HalfdaysHelper
+  include ActivityHelper
   include ActionView::Helpers::UrlHelper
 
   def self.all

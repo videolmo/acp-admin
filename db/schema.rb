@@ -368,7 +368,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_192419) do
   create_table "memberships", id: :serial, force: :cascade do |t|
     t.integer "member_id", null: false
     t.decimal "activity_annual_price_change", precision: 8, scale: 2, default: "0.0", null: false
-    t.integer "activity_demanded_annualy", null: false
+    t.integer "activity_participations_demanded_annualy", null: false
     t.date "started_on", null: false
     t.date "ended_on", null: false
     t.datetime "created_at"

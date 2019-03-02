@@ -162,7 +162,7 @@ FactoryBot.define do
   factory :basket_size do
     sequence(:name) { |n| "Basket Size #{n}" }
     price { 30 }
-    annual_halfday_works { 2 }
+    activity_participations_demanded_annualy { 2 }
 
     trait :small do
       name { 'Eveil' }
@@ -220,9 +220,9 @@ FactoryBot.define do
       annual_fee { member.annual_fee }
     end
 
-    trait :halfday_participation do
-      paid_missing_halfday_works { 1 }
-      paid_missing_halfday_works_amount { ACP::HALFDAY_PRICE }
+    trait :activity_participation do
+      paid_missing_activity_participations { 1 }
+      paid_missing_activity_participations_amount { ACP::HALFDAY_PRICE }
     end
 
     trait :unprocessed do
@@ -251,7 +251,7 @@ FactoryBot.define do
     amount { 1000 }
   end
 
-  factory :halfday do
+  factory :activity do
     date { Date.current.beginning_of_week + 8.days }
     start_time { '8:30' }
     end_time { '12:00' }
@@ -259,7 +259,7 @@ FactoryBot.define do
     activity { 'Aide aux champs' }
   end
 
-  factory :halfday_participation do
+  factory :activity_participation do
     member
     halfday
     participants_count { 1 }
@@ -272,14 +272,14 @@ FactoryBot.define do
     end
 
     trait :validated do
-      halfday { create(:halfday, date: 1.day.ago )}
+      halfday { create(:activity, date: 1.day.ago )}
       state { 'validated' }
       validated_at { Time.current }
       validator { create(:admin) }
     end
 
     trait :rejected do
-      halfday { create(:halfday, date: 1.day.ago )}
+      halfday { create(:activity, date: 1.day.ago )}
       state { 'rejected' }
       rejected_at { Time.current }
       validator { create(:admin) }

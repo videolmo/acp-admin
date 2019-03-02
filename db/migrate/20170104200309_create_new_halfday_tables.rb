@@ -1,6 +1,6 @@
-class CreateNewHalfdayTables < ActiveRecord::Migration[5.0]
+class CreateNewActivityTables < ActiveRecord::Migration[5.0]
   def change
-    create_table :halfdays do |t|
+    create_table :activities do |t|
       t.date :date, null: false, index: true
       t.time :start_time, null: false, index: true
       t.time :end_time, null: false
@@ -12,8 +12,8 @@ class CreateNewHalfdayTables < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    create_table :halfday_participations do |t|
-      t.references :halfday, foreign_key: true, null: false, index: true
+    create_table :activity_participations do |t|
+      t.references :activity, foreign_key: true, null: false, index: true
       t.references :member, foreign_key: true, null: false, index: true
       t.references :validator, foreign_key: { to_table: :admins }
 

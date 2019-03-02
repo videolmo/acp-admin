@@ -4,14 +4,14 @@ describe 'Invoices' do
   it 'creates an invoice for a rejected halfday participation' do
     member = create(:member, name: 'Jean Paul')
     create(:membership, id: 42, member: member)
-    create(:halfday_participation, :rejected,
+    create(:activity_participation, :rejected,
       id: 3,
       member: member,
       participants_count: 2)
 
     sign_in create(:admin, name: 'Sheriff')
 
-    visit '/halfday_participations/3'
+    visit '/activity_participations/3'
     click_link 'Facturer'
 
     fill_in 'Commentaire', with: 'A oublier de venir.'

@@ -1,7 +1,7 @@
-class RenameValidatedHalfdayWorksOnMemberships < ActiveRecord::Migration[5.2]
+class RenameValidatedActivityWorksOnMemberships < ActiveRecord::Migration[5.2]
   def change
-    rename_column :memberships, :validated_halfday_works, :recognized_halfday_works
+    rename_column :memberships, :validated_activity_participations, :activity_participations_accepted
 
-    # Membership.find_each(&:update_recognized_halfday_works!)
+    # Membership.find_each(&:update_activity_participations_accepted!)
   end
 end

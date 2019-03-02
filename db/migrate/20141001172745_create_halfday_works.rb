@@ -1,6 +1,6 @@
-class CreateHalfdayWorks < ActiveRecord::Migration[4.2]
+class CreateActivityWorks < ActiveRecord::Migration[4.2]
   def change
-    create_table :halfday_works do |t|
+    create_table :activity_participations do |t|
       t.references :member, index: true, null: false
       t.date :date, null: false
       t.string :periods, array: true, null: false
@@ -11,7 +11,7 @@ class CreateHalfdayWorks < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :halfday_works, :date
-    add_index :halfday_works, :validated_at
+    add_index :activity_participations, :date
+    add_index :activity_participations, :validated_at
   end
 end

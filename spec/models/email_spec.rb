@@ -38,28 +38,28 @@ describe Email do
       ]))
   end
 
-  it 'delivers halfday_reminder template' do
+  it 'delivers activity_participations_reminder template' do
     member = create(:member,
       name: 'John Doew',
       emails: 'john@doew.com')
-    halfday = create(:halfday,
+    halfday = create(:activity,
       date: '24.03.2018',
       start_time: Time.zone.parse('8:30'),
       end_time: Time.zone.parse('12:00'),
       place: 'Thielle',
       activity: 'Aide aux champs',
       description: 'Que du bonheur')
-    participation = create(:halfday_participation,
+    participation = create(:activity_participation,
       member: member,
-      halfday: halfday,
+      activity: activity,
       participants_count: 2)
-    create(:halfday_participation, :carpooling,
-      halfday: halfday,
+    create(:activity_participation, :carpooling,
+      activity: activity,
       member: create(:member, name: 'Elea Asah'),
       carpooling_phone: '+41765431243',
       carpooling_city: 'La Chaux-de-Fonds')
 
-    Email.deliver_later(:halfday_reminder, participation)
+    Email.deliver_later(:activity_participations_reminder, participation)
 
     expect(email_adapter.deliveries.size).to eq 1
     expect(email_adapter.deliveries.first).to eq(
@@ -67,14 +67,14 @@ describe Email do
       to: 'john@doew.com',
       template: 'halfday-reminder-fr',
       template_data: {
-        halfday_date: '24 mars 2018',
-        halfday_date_long: 'samedi 24 mars 2018',
+        activity_date: '24 mars 2018',
+        activity_date_long: 'samedi 24 mars 2018',
         halfday_period: '8:30-12:00',
         halfday_activity: 'Aide aux champs',
         halfday_description: 'Que du bonheur',
         halfday_place_name: 'Thielle',
         halfday_participants_count: 2,
-        halfday_participations_with_carpooling: [
+        activity_participations_with_carpooling: [
           member_name: 'Elea Asah',
           carpooling_phone: '076 543 12 43',
           carpooling_city: 'La Chaux-de-Fonds'
@@ -84,11 +84,11 @@ describe Email do
       attachments: [])
   end
 
-  it 'delivers halfday_validated template' do
+  it 'delivers activity_participations_validated template' do
     member = create(:member,
       name: 'John Doew',
       emails: 'john@doew.com')
-    halfday = create(:halfday,
+    halfday = create(:activity,
       date: '24.03.2018',
       start_time: Time.zone.parse('8:30'),
       end_time: Time.zone.parse('12:00'),
@@ -96,12 +96,12 @@ describe Email do
       place_url: 'https://google.map/thielle',
       activity: 'Aide aux champs',
       description: 'Que du bonheur')
-    participation = create(:halfday_participation, :validated,
+    participation = create(:activity_participation, :validated,
       member: member,
-      halfday: halfday,
+      activity: activity,
       participants_count: 1)
 
-    Email.deliver_later(:halfday_validated, participation)
+    Email.deliver_later(:activity_participations_validated, participation)
 
     expect(email_adapter.deliveries.size).to eq 1
     expect(email_adapter.deliveries.first).to eq(
@@ -109,8 +109,8 @@ describe Email do
       to: 'john@doew.com',
       template: 'halfday-validated-fr',
       template_data: {
-        halfday_date: '24 mars 2018',
-        halfday_date_long: 'samedi 24 mars 2018',
+        activity_date: '24 mars 2018',
+        activity_date_long: 'samedi 24 mars 2018',
         halfday_period: '8:30-12:00',
         halfday_activity: 'Aide aux champs',
         halfday_description: 'Que du bonheur',
@@ -124,11 +124,11 @@ describe Email do
       attachments: [])
   end
 
-  it 'delivers halfday_rejected template' do
+  it 'delivers activity_participations_rejected template' do
     member = create(:member,
       name: 'John Doew',
       emails: 'john@doew.com')
-    halfday = create(:halfday,
+    halfday = create(:activity,
       date: '24.03.2018',
       start_time: Time.zone.parse('8:30'),
       end_time: Time.zone.parse('12:00'),
@@ -136,12 +136,12 @@ describe Email do
       place_url: 'https://google.map/thielle',
       activity: 'Aide aux champs',
       description: 'Que du bonheur')
-    participation = create(:halfday_participation, :rejected,
+    participation = create(:activity_participation, :rejected,
       member: member,
-      halfday: halfday,
+      activity: activity,
       participants_count: 3)
 
-    Email.deliver_later(:halfday_rejected, participation)
+    Email.deliver_later(:activity_participations_rejected, participation)
 
     expect(email_adapter.deliveries.size).to eq 1
     expect(email_adapter.deliveries.first).to eq(
@@ -149,8 +149,8 @@ describe Email do
       to: 'john@doew.com',
       template: 'halfday-rejected-fr',
       template_data: {
-        halfday_date: '24 mars 2018',
-        halfday_date_long: 'samedi 24 mars 2018',
+        activity_date: '24 mars 2018',
+        activity_date_long: 'samedi 24 mars 2018',
         halfday_period: '8:30-12:00',
         halfday_activity: 'Aide aux champs',
         halfday_description: 'Que du bonheur',

@@ -1,5 +1,5 @@
-ActiveAdmin.register Halfday do
-  menu parent: :halfdays_human_name, priority: 2, label: -> { Halfday.human_attribute_name(:dates) }
+ActiveAdmin.register Activity do
+  menu parent: :activity_human_name, priority: 2, label: -> { Activity.human_attribute_name(:dates) }
   actions :all, except: [:show]
 
   scope :all
@@ -14,7 +14,7 @@ ActiveAdmin.register Halfday do
     column :activity, ->(h) { h.activity }
     column :participants, ->(h) {
       text = [h.participations.sum(&:participants_count), h.participants_limit || '∞'].join(' / ')
-      link_to text, halfday_participations_path(q: { halfday_id_eq: h.id }, scope: :all)
+      link_to text, activity_participations_path(q: { activity_id_eq: h.id }, scope: :all)
     }
     actions
   end
@@ -30,8 +30,8 @@ ActiveAdmin.register Halfday do
     column(:participants_limit)
   end
 
-  filter :place, as: :select, collection: -> { Halfday.select(:places).distinct.map(&:place).sort }
-  filter :activity, as: :select, collection: -> { Halfday.select(:activities).distinct.map(&:activity).sort }
+  filter :place, as: :select, collection: -> { Activity.select(:places).distinct.map(&:place).sort }
+  filter :activity, as: :select, collection: -> { Activity.select(:activities).distinct.map(&:activity).sort }
   filter :date
 
   form do |f|
@@ -48,9 +48,9 @@ ActiveAdmin.register Halfday do
       }
     end
     f.inputs t('formtastic.inputs.place_and_activity') do
-      if f.object.new_record? && HalfdayPreset.any?
+      if f.object.new_record? && ActivityPreset.any?
         f.input :preset_id,
-          collection: HalfdayPreset.all + [HalfdayPreset.new(id: 0, place: HalfdayPreset.human_attribute_name(:other))],
+          collection: ActivityPreset.all + [ActivityPreset.new(id: 0, place: ActivityPreset.human_attribute_name(:other))],
           include_blank: false
       end
       preset_present = f.object.preset.present?
@@ -76,8 +76,8 @@ ActiveAdmin.register Halfday do
     activities: I18n.available_locales,
     descriptions: I18n.available_locales)
 
-  before_build do |halfday|
-    halfday.preset_id ||= HalfdayPreset.first&.id
+  before_build do |activity|
+    activity.preset_id ||= ActivityPreset.first&.id
   end
 
   config.per_page = 25
