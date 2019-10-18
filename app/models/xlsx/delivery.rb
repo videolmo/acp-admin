@@ -97,7 +97,7 @@ module XLSX
       basket_counts = @basket_sizes.map { |bs| baskets.where(basket_size_id: bs.id).sum(:quantity) }
       add_worksheet("#{depot.name} (#{basket_counts.join('+')})")
 
-      add_basket_lines(baskets)
+      add_basket_lines(baskets, style: depot.xlsx_worksheet_style)
     end
 
     def build_absences_worksheet
@@ -108,7 +108,7 @@ module XLSX
       add_basket_lines(baskets)
     end
 
-    def add_basket_lines(baskets)
+    def add_basket_lines(baskets, style: :default)
       cols = %w[
         Nom
         Emails
@@ -120,12 +120,15 @@ module XLSX
       ]
       cols << 'Compléments' if @basket_complements.any?
       cols << 'Note alimentaire'
+
+      if style == :bike_delivery
+
       add_header(*cols)
       baskets
         .joins(:member)
         .includes(:member, :basket_size, :complements, baskets_basket_complements: :basket_complement).order('members.name')
         .not_empty
-        .each { |basket| add_basket_line(basket) }
+        .each { |basket| add_basket_line(basket, style: style) }
 
       @worksheet.change_column_width(0, 35)
       @worksheet.change_column_width(1, 30)
