@@ -57,7 +57,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  config.authentication_method = :authenticate_admin!
+  config.authentication_method = :set_locale_and_authenticate_admin!
 
   # == User Authorization
   #
@@ -149,7 +149,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  config.before_action :set_locale
+  # config.before_action :set_locale
 
   # == Localize Date/Time Format
   #
@@ -313,39 +313,16 @@ ActiveAdmin.setup do |config|
   # config.order_clause = MyOrderClause
 end
 
-module ActiveAdmin::ViewHelpers
-  include ApplicationHelper
-  include MembershipsHelper
-  include DashboardHelper
-  include ActivitiesHelper
-  include InvoicesHelper
-  include AcpsHelper
-end
-
-class ActiveAdmin::ResourceController
-  include ApplicationHelper
-  include AcpsHelper
-  include FormsHelper
-  include BasketContentsHelper
-
-  def csv_filename
-    "#{resource_class.model_name.human(count: 2).downcase.dasherize.delete(' ')}-#{Time.zone.now.to_date.to_s(:default)}.csv"
-  end
-end
+# class ActiveAdmin::ResourceController
+#   def csv_filename
+#     "#{resource_class.model_name.human(count: 2).downcase.dasherize.delete(' ')}-#{Time.zone.now.to_date.to_s(:default)}.csv"
+#   end
+# end
 
 # Ensure that the overwritten ActivityNaming.i18n_key is used
 class ActiveAdmin::Resource::Name
   def i18n_key
     @klass&.model_name&.i18n_key || super
-  end
-end
-
-require 'active_admin/base_controller'
-ActiveAdmin::BaseController.class_eval do
-  rescue_from ActiveRecord::InvalidForeignKey do
-    redirect_back(
-      fallback_location: root_path,
-      alert: t('active_admin.flash.invalid_foreign_key_alert'))
   end
 end
 
@@ -358,5 +335,4 @@ module AdminPageLayoutOverride
     super
   end
 end
-
-ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride
+ActiveAdmin::Views::Pages::Base.prepend(AdminPageLayoutOverride)

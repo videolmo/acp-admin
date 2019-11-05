@@ -7,11 +7,22 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_admin
 
+  rescue_from ActiveRecord::InvalidForeignKey do
+    redirect_back(
+      fallback_location: root_path,
+      alert: t('active_admin.flash.invalid_foreign_key_alert'))
+  end
+
   def access_denied(exception)
     redirect_back fallback_location: root_path, alert: exception.message
   end
 
   private
+
+  def set_locale_and_authenticate_admin!
+    set_locale
+    authenticate_admin!
+  end
 
   def authenticate_admin!
     if !current_admin
