@@ -1,5 +1,14 @@
 _:
   activerecord:
+    errors:
+      models:
+        group_buying/order:
+          attributes:
+            base:
+              no_items:
+                _fr: Aucun produit sélectionné
+              terms_of_service_unchecked:
+                _fr: Les conditions générales de vente doivent être acceptées
     attributes:
       absence:
         ended_on:
@@ -831,6 +840,13 @@ _:
         other:
           _de: Lieferungen
           _fr: Livraisons
+      group_buying/order:
+        one:
+          _de: Bestellung
+          _fr: Commande
+        other:
+          _de: Bestellungen
+          _fr: Commandes
       group_buying/producer:
         one:
           _de: Produzent

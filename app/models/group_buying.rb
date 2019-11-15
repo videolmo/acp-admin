@@ -1,0 +1,2 @@
+module GroupBuying
+end

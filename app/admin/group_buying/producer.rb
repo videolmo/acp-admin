@@ -1,5 +1,5 @@
 ActiveAdmin.register GroupBuying::Producer do
-  menu parent: :group_buying, priority: 2
+  menu parent: :group_buying, priority: 3
   actions :all, except: [:show]
 
   filter :name

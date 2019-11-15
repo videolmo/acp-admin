@@ -1,5 +1,44 @@
 _:
   members:
+    group_buying:
+      base:
+        show:
+          delivery:
+            _fr: Livraison du %{date}
+          orderable_until:
+            _fr: Commandes ouvertes jusqu'au <u>%{date}</u>.
+          not_orderable:
+            _fr: Désolé, les commandes ne sont plus possible.
+          new_order:
+            _fr: Nouvelle commande
+          products:
+            _fr: Produits
+          order_amount:
+            _fr: "Total: %{amount}"
+          past_orders:
+            _fr: "Commandes passées"
+          form_submit:
+            _fr: Commander
+          terms_of_service:
+            _fr: J'ai lu et j'accepte les conditions générales de vente
+          past_order_info:
+            _fr: "Commande #%{number} (%{products_count})"
+          products_count:
+            one:
+              _fr: "1 produit"
+            other:
+              _fr: "%{count} produits"
+          past_orders_explanation:
+            _fr: Pour toute question concernant une commande passée, merci de nous %{contact_link}.
+          contact:
+            _fr: contacter
+      orders:
+        create:
+          flash:
+            notice:
+              _fr: Merci pour votre commande!
+            error:
+              _fr: Commande invalide, merci de regarder les erreurs ci-dessous!
     absences:
       create:
         flash:

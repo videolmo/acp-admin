@@ -1,8 +1,10 @@
 ActiveAdmin.register GroupBuying::Product do
-  menu parent: :group_buying, priority: 3
+  menu parent: :group_buying, priority: 4
   actions :all, except: [:show]
 
-  filter :producer
+  filter :producer,
+    as: :select,
+    collection: -> { GroupBuying::Producer.order(:name) }
   filter :available
   filter :price
 

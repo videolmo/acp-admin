@@ -1,5 +1,5 @@
 ActiveAdmin.register GroupBuying::Delivery do
-  menu parent: :group_buying, priority: 1
+  menu parent: :group_buying, priority: 2
 
   scope :all
   scope :coming, default: true
@@ -19,7 +19,8 @@ ActiveAdmin.register GroupBuying::Delivery do
 
   show do |delivery|
     attributes_table do
-      row(:date) { l(delivery.orderable_until, date_format: :long) }
+      row :id
+      row(:date) { l(delivery.date, date_format: :long) }
       row(:orderable_until) { l(delivery.orderable_until, date_format: :long) }
       row :description
     end
