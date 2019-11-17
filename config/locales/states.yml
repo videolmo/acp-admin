@@ -26,6 +26,16 @@ _:
       open:
         _de: offen
         _fr: ouverte
+    group_buying/order:
+      canceled:
+        _de: abgesagt
+        _fr: annulée
+      closed:
+        _de: bezahlte
+        _fr: payée
+      open:
+        _de: zu zahlen
+        _fr: à payer
     member:
       active:
         _de: aktiv

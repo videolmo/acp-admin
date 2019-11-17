@@ -135,7 +135,7 @@ module PDF
             t('acp_shares_number_negative', count: invoice.acp_shares_number.abs)
           end
         data << [str, cur(invoice.amount)]
-      when 'Other'
+      when 'Other', 'GroupBuying::Order'
         invoice.items.each do |item|
           data << [item.description, cur(item.amount)]
         end
