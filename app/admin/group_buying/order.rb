@@ -21,7 +21,7 @@ ActiveAdmin.register GroupBuying::Order do
   index do
     column :id, ->(order) { auto_link order, order.id }
     column :created_at, ->(order) { l(order.date, format: :number) }
-    column :delivery, ->(order) { auto_link order.delivery }, sortable: 'delivery_id'
+    column :delivery, ->(order) { auto_link order.delivery, order.delivery.title  }, sortable: 'delivery_id'
     column :member, ->(order) { auto_link order.member }
     column :amount, ->(order) { number_to_currency(order.amount) }
     column :state, ->(order) { status_tag order.state_i18n_name, class: order.state }

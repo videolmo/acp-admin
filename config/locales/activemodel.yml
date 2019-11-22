@@ -5,3 +5,6 @@ _:
         count:
           _de: Anzahl (am+pm * Teilnehmer)
           _fr: Nombre (am+pm * participants)
+      quantity:
+        _de: Menge
+        _fr: Quantité

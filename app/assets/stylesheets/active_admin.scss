@@ -253,6 +253,17 @@ table.table-group_buying_orders {
   }
 
   .col-quantity {
+    max-width: 100px !important;
+    padding-right: 25px;
+    padding-left: 0;
+  }
+
+  .col-amount {
+    width: 70px !important;
+    padding-left: 0;
+  }
+
+  .col-quantity {
     width: 50px;
   }
 }
@@ -367,6 +378,11 @@ table#index_table_group_buying_deliveries {
 
   .col-actions {
     width: 110px;
+  }
+
+  .col-orders {
+    text-align: right;
+    width: 120px;
   }
 }
 
