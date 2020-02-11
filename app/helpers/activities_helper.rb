@@ -44,6 +44,11 @@ module ActivitiesHelper
     end
   end
 
+  def display_participants_count(activity)
+    if participants_limit
+    end
+  end
+
   def activity_participation_summary(activity_participation)
     summary = activity_participation.member.name
     if activity_participation.participants_count > 1
