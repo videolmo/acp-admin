@@ -27,7 +27,7 @@ _:
         no_present_or_future_absences:
           _de: Keine, teilen Sie uns bitte Ihre Abwesenheiten mit dem unten stehenden Formular mit.
           _fr: Aucune, merci d'annoncer votre absence à l'aide du formulaire ci-dessous.
-          _it: Nessuno, grazie per aver annunciato la tua assenza utilizzando il modulo sottostante.
+          _it: Nessuna assenza, grazie per annunciare le vostre prossime assenze utilizzando il modulo sottostante.
         past_absences:
           _de: Ihre vergangene Abwesenheiten
           _fr: Vos absences passées
@@ -35,7 +35,7 @@ _:
         present_or_future_absences:
           _de: Ihre künftige oder aktuelle Abwesenheiten
           _fr: Vos absences à venir ou en cours
-          _it: Le vostre assenze future o in corso
+          _it: Le vostre assenze (pianificate o in corso)
         submit:
           _de: Senden
           _fr: Envoyer
@@ -130,15 +130,15 @@ _:
         coming_activity_participations/basket_preparation:
           _de: Ihre künftigen Taschen befüllung
           _fr: Vos mises en panier à venir
-          _it: Vostre prossime preparazioni ceste
+          _it: Le vostre prossime 'preparazioni ceste'
         coming_activity_participations/halfday_work:
           _de: Ihre künftigen ½ Tage
           _fr: Vos ½ journées à venir
-          _it: Vostre prossime ½ giornate
+          _it: Le vostre prossime ½ giornate di lavoro
         coming_activity_participations/hour_work:
           _de: Ihre künftigen ½ Tage
           _fr: Vos heures de travail à venir
-          _it: Vostre prossime ore di lavoro
+          _it: Le vostre prossime ore di lavoro
         contact_link:
           _de: Kontakt aufnehmen
           _fr: contacter
@@ -150,11 +150,11 @@ _:
         no_activities/basket_preparation:
           _de: Sorry, momentan gibt es keine freie Taschen befüllung.
           _fr: Désolé, aucune mise en panier disponible pour le moment.
-          _it: Spiacenti, nessuna preparazione cesta è disponibile al momento.
+          _it: Spiacenti, nessuna 'preparazione cesta' è disponibile al momento.
         no_activities/halfday_work:
           _de: Sorry, momentan gibt es keinen freien ½ Tag.
           _fr: Désolé, aucune ½ journée disponible pour le moment.
-          _it: Spiacenti, nessuna ½ giornata è disponibile al momento.
+          _it: In questo momento purtroppo non sono previste ½ giornate di lavoro. 
         no_activities/hour_work:
           _de: Sorry, momentan gibt es keinen freie Arbeitsstunde.
           _fr: Désolé, aucune heure de travail disponible pour le moment.
@@ -190,7 +190,7 @@ _:
         no_past_activity_participations:
           _de: Momentan nichts zu melden, wir freuen uns Ihnen zu sehen!
           _fr: Rien à signaler pour le moment, on se réjouit de vous voir!
-          _it: Nulla da segnalare per ora, ma non vediamo l'ora di rivedervi!
+          _it: Non ci sono partecipazioni registrare, ma non vediamo l'ora di rivedervi sui campi!
         participants_count_label:
           _de: Anzahl Teilnehmer
           _fr: Nombre de participants
@@ -198,15 +198,15 @@ _:
         past_activity_participations/basket_preparation:
           _de: Ihre geleisteten Taschen befüllung
           _fr: Vos mises en panier effectuées
-          _it: Vostre preparazioni ceste effettuate
+          _it: Vostre 'preparazioni ceste' effettuate
         past_activity_participations/halfday_work:
           _de: Ihre geleisteten ½ Tage
           _fr: Vos ½ journées effectuées
-          _it: Vostre ½ giornate effettuate
+          _it: Vostre ½ giornate di lavoro già effettuate
         past_activity_participations/hour_work:
           _de: Ihre geleistete Arbeitsstunden
           _fr: Vos heures de travail effectuées
-          _it: Vostre ore di lavoro effettuate
+          _it: Vostre ore di lavoro già effettuate
     billing:
       index:
         billing:
