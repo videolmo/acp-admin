@@ -22,7 +22,7 @@ _:
         activity_i18n_scope:
           _de: Mehrwertsteuernummer
           _fr: Appellation
-          _it: Appellation
+          _it: Definizione della partecipazione
         activity_participation_deletion_deadline_in_days:
           _de: Abmeldungsfrist (in Tagen)
           _fr: Délai de désinscription (en jours)
@@ -138,7 +138,7 @@ _:
         open_renewal_reminder_sent_after_in_days:
           _de: Senden Sie eine Mahnung nach (in Tagen)
           _fr: Envoyer un rappel après (en jours)
-          _it: Inviare un promemoria dopo (in giorni)
+          _it: Inviare un promemoria dopo (x giorni)
         open_renewal_text:
           _de: Erläuterung
           _fr: Explication
@@ -591,7 +591,7 @@ _:
         waiting_alternative_depot_ids:
           _de: Alternative Depot(s)
           _fr: Dépôt(s) alternatifs(s)
-          _it: Punto/ di ritiro alternativo
+          _it: Punto di ritiro alternativo
         waiting_basket_complements:
           _de: Taschenzusätze Warteliste
           _fr: Compléments panier en attente
@@ -692,7 +692,7 @@ _:
         activity_participations_annual_price_change_positive/halfday_work:
           _de: Nicht geleistete Halbtage
           _fr: "½ journées de travail non effectuées"
-          _it: "½ jgiornate di lavoro non effetuate"
+          _it: "½ giornate di lavoro non effetuate"
         activity_participations_annual_price_change_positive/hour_work:
           _de: Nicht geleistete Arbeitsstunden
           _fr: Heures de travail non effectuées
