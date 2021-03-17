@@ -41,15 +41,15 @@ _:
       activity_participation_rejected:
         _de: Wird gesendet, wenn die Teilnahme an einer Aktivität abgelehnt wird.
         _fr: Envoyé quand une participation à une activité est refusée.
-        _it: Inviato quando la partecipazione a un'attività viene rifiutata.
+        _it: Inviata quando la partecipazione a un'attività viene rifiutata.
       activity_participation_reminder:
         _de: Wird gesendet, um das Mitglied daran zu erinnern, sich 2 Wochen und/oder 3 Tage vorher für eine Aktivität anzumelden.
         _fr: Envoyé pour rappeler au membre son inscription à une activité, 2 semaines et/ou 3 jours avant.
-        _it: Inviato per ricordare al socio / alla socia della registrazione per un'attività, 2 settimane e / o 3 giorni prima.
+        _it: Inviata per ricordare al socio / alla socia della registrazione per un'attività, 2 settimane e / o 3 giorni prima.
       activity_participation_validated:
         _de: Wird gesendet, wenn die Teilnahme an einer Aktivität bestätigt wird.
         _fr: Envoyé quand une participation à une activité est validée.
-        _it: Inviato quando viene convalidata una partecipazione a un'attività.
+        _it: Inviata quando viene convalidata una partecipazione a un'attività.
       invoice_created:
         _de: Wird gesendet, wenn eine Rechnung automatisch erstellt wird oder wenn die Schaltfläche "Senden" einer manuell erstellten Rechnung gedrückt wird.
         _fr: Envoyé lors de la création automatique d'une facture ou quand le bouton "Envoyer" d'une facture créée manuellement est pressé.
@@ -57,23 +57,23 @@ _:
       invoice_overdue_notice:
         _de: Wird automatisch gesendet, wenn eine Rechnung 35 Tage nach ihrer Erstellung oder letzten Mahnung noch offen ist.
         _fr: Envoyé automatiquement quand une facture est toujours ouverte 35 jours après sa création ou son dernier rappel.
-        _it: Inviato automaticamente quando una fattura è ancora aperta 35 giorni dopo la sua creazione o il suo ultimo promemoria.
+        _it: Inviata automaticamente quando una fattura è ancora aperta 35 giorni dopo la sua creazione o il suo ultimo promemoria.
       member_activated:
         _de: Wird gesendet, wenn ein Mitglied zum ersten Mal aktiv wird, sobald sein erster (aktueller oder zukünftiger) Abonnement erstellt wird.
         _fr: Envoyé quand un membre devient actif, pour la première fois, dès que son premier abonnement (en cours ou futur) est créé.
-        _it: Inviato quando un socio diventa attivo, per la prima volta, non appena viene creato il suo primo abbonamento (attuale o futuro).
+        _it: Inviata quando un socio diventa attivo, per la prima volta, non appena viene creato il suo primo abbonamento (attuale o futuro).
       member_validated:
         _de: Wird gesendet, wenn die Registrierung eines neuen Mitglieds validiert wurde.
         _fr: Envoyé quand l'inscription d'un nouveau membre est validée.
-        _it: Inviato quando la registrazione di un nuovo socio viene convalidata.
+        _it: Inviata quando la registrazione di un nuovo socio viene convalidata.
       membership_renewal:
         _de: Wird gesendet, um das Mitglied über das Formular auf seiner Mitgliederseite zu fragen, ob es sein Abonnement erneuern möchte oder nicht.
         _fr: Envoyé afin de demander au membre si il désire ou non renouveler son abonnement via le formulaire sur sa page de membre.
-        _it: Inviato per chiedere al socio se desidera o meno rinnovare il suo abbonamento tramite il modulo nella sua pagina membro.
+        _it: Inviata per chiedere al socio se desidera o meno rinnovare il suo abbonamento tramite il modulo nella sua pagina membro.
       membership_renewal_reminder:
         _de: Gesendet, um das Mitglied daran zu erinnern, dass es das Abonnementserneuerungsformular noch nicht ausgefüllt hat (siehe <a href='/settings#membership_renewal'>die Einstellungen</a> für die Frist).
         _fr: Envoyé afin de rappeler au membre qu'il n'a pas encore rempli le formulaire de renouvellement de son abonnement (voir <a href='/settings#membership_renewal'>les paramètres</a> pour le délai).
-        _it: Inviato per ricordare al socio che non ha ancora completato il modulo di rinnovo dell'abbonamento (vedi <a href='/settings#membership_renewal'>parametri</a> per le scadenze).
+        _it: Inviata per ricordare al socio che non ha ancora completato il modulo di rinnovo dell'abbonamento (vedi <a href='/settings#membership_renewal'>parametri</a> per le scadenze).
     title:
       activity_participation_rejected:
         _de: Abgelehnte Aktivität
@@ -94,7 +94,7 @@ _:
       invoice_overdue_notice:
         _de: Mahnung der Rechnung
         _fr: Rappel facture
-        _it: Promemorai fattura
+        _it: Promemoria fattura
       member_activated:
         _de: Mitglied aktiviert
         _fr: Membre activé
