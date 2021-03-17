@@ -499,7 +499,7 @@ _:
         acp_shares_info:
           _de: N° Anteilschein
           _fr: N° part sociale
-          _it: N° quote sociali cooperative
+          _it: N° quote sociali cooperativa
         annual_fee:
           _de: Jährlicher Beitrag
           _fr: Cotisation anuelle
@@ -662,7 +662,7 @@ _:
           one:
             _de: Eine nicht geleiste Taschen befüllung
             _fr: Une mise en panier non effectuée
-            _it: Riempimento della cesta non effetuato
+            _it: Riempimento della cesta non effettuato
           other:
             _de: "%{count} nicht geleistete Taschen befüllung"
             _fr: "%{count} mises en panier non effectuées"
@@ -680,7 +680,7 @@ _:
           one:
             _de: Ein nicht geleistete Arbeitsstunde
             _fr: Une heure de travail non effectuée
-            _it: Un'ora di lavoro non effetuata
+            _it: Un'ora di lavoro non effettuata
           other:
             _de: "%{count} nicht geleistete Arbeitsstunden"
             _fr: "%{count} heures de travail non effectuées"
@@ -688,11 +688,11 @@ _:
         activity_participations_annual_price_change_positive/basket_preparation:
           _de: Nicht geleistete Taschen befüllung
           _fr: Mises en panier non effectuées
-          _it: Riempimento delle ceste non effetuate
+          _it: Riempimento delle ceste non effettuate
         activity_participations_annual_price_change_positive/halfday_work:
           _de: Nicht geleistete Halbtage
           _fr: "½ journées de travail non effectuées"
-          _it: "½ jgiornate di lavoro non effetuate"
+          _it: "½ jgiornate di lavoro non effettuate"
         activity_participations_annual_price_change_positive/hour_work:
           _de: Nicht geleistete Arbeitsstunden
           _fr: Heures de travail non effectuées
@@ -701,11 +701,11 @@ _:
           one:
             _de: Rabatt für eine zusätzliche Taschen befüllung
             _fr: Réduction pour une mise en panier supplémentaire
-            _it: Riduzione per una preparazione cesta supplementare
+            _it: Riduzione per una 'preparazione cesta' supplementare
           other:
             _de: Rabatt für %{count} zusätzliche Taschen befüllung
             _fr: Réduction pour %{count} mises en panier supplémentaires
-            _it: Riduzione per %{count} preparazioni ceste supplementari
+            _it: Riduzione per %{count} 'preparazioni ceste' supplementari
         activity_participations_annual_price_change_reduction/halfday_work:
           one:
             _de: Rabatt für einen zusätzlichen Halbtag
@@ -727,7 +727,7 @@ _:
         activity_participations_coming:
           _de: Künftig
           _fr: À venir
-          _it: Futuro
+          _it: Future
         activity_participations_demanded:
           _de: Zu leisten
           _fr: Demandées
@@ -735,7 +735,7 @@ _:
         activity_participations_demanded/basket_preparation:
           _de: Verlangte Taschen befüllung
           _fr: Mises en panier demandées
-          _it: Preparazioni ceste richieste
+          _it: 'Preparazioni ceste' richieste
         activity_participations_demanded/halfday_work:
           _de: "½ Tage verlangt"
           _fr: "½ journées demandées"
@@ -799,7 +799,7 @@ _:
         baskets_count:
           _de: Taschen
           _fr: Paniers
-          _it: Paniers
+          _it: Ceste
         deliveries_count:
           _de: Taschen
           _fr: Paniers
@@ -843,7 +843,7 @@ _:
         missing_activity_participations/basket_preparation:
           _de: Fehlende Taschen befüllung
           _fr: Mises en panier manquantes
-          _it: Preparazioni ceste mancanti
+          _it: 'Preparazioni ceste' mancanti
         missing_activity_participations/halfday_work:
           _de: Fehlende ½ Tage
           _fr: "½ journées manquantes"
@@ -883,11 +883,11 @@ _:
         renewal_state:
           _de: Verlängerung
           _fr: Renouvellement
-          _it: Renouvellement
+          _it: Rinnovo
         renewed:
           _de: Erneuert
           _fr: Renouvellé
-          _it: Rinnovo
+          _it: Rinnovate
         renewed_at:
           _de: Erneuert am
           _fr: Renouvellé le
@@ -998,11 +998,11 @@ _:
         one:
           _de: Voreinstellung
           _fr: Preset
-          _it: Preset
+          _it: Preferenze
         other:
           _de: Voreinstellungen
           _fr: Presets
-          _it: Presets
+          _it: Preferenze
       basket:
         one:
           _de: Tasche
@@ -1060,7 +1060,7 @@ _:
         one:
           _de: Freigeben von Kontaktinformationen (zwischen Mitgliedern eine Depot)
           _fr: Copaniérage (Rends possible le partage des coordonnées entre membres d'un dépôt)
-          _it: Condivisione di informazioni di contatto (tra membri di un luogo di consegna)
+          _it: Condivisione di informazioni di contatto (tra membri di un punto di ritiro)
       delivery:
         one:
           _de: Lieferung
@@ -1097,11 +1097,11 @@ _:
         one:
           _de: Bestellung
           _fr: Commande
-          _it: Comanda
+          _it: Ordine
         other:
           _de: Bestellungen
           _fr: Commandes
-          _it: Comande
+          _it: Ordini
       group_buying/producer:
         one:
           _de: Produzent
