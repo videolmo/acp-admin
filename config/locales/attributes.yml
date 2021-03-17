@@ -243,7 +243,7 @@ _:
     price:
       _de: Preis
       _fr: Prix
-      _it: Presso
+      _it: Prezzo
     producer:
       _de: Produzent
       _fr: Producteur
@@ -295,7 +295,7 @@ _:
     unit_price:
       _de: Einheitspreis
       _fr: Prix unité
-      _it: Presso unitario
+      _it: Prezzo unitario
     updated_at:
       _de: Aktualisiert am
       _fr: Mis à jour le
