@@ -4,7 +4,7 @@ _:
       manage_admin_notifications:
         _de: Meine Benachrichtigungen verwalten
         _fr: Gérer mes notifications
-        _it: Gestisci le notiche
+        _it: Gestisci le notifiche
     members:
       header:
         absences_subtitle:
@@ -31,7 +31,7 @@ _:
         logout:
           _de: Abmeldung
           _fr: Déconnexion
-          _it: Disconnesione
+          _it: Disconnessione
         membership_current:
           _de: "⤷ Aktuelles"
           _fr: "⤷ En cours"
@@ -47,7 +47,7 @@ _:
         membership_renewal:
           _de: "⤷ Erneuerung?"
           _fr: "⤷ Renouvellement ?"
-          _it: "⤷ Rinnovo ?"
+          _it: "⤷ Rinnovo?"
         membership_trial:
           _de: "⤷ Probezeit"
           _fr: "⤷ Période d'essai"
